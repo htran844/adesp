@@ -8580,7 +8580,7 @@ a.genesis-nav-menu .menu-signup-button a.disabled,fieldset[disabled] a.genesis-n
 }
 
 .genesis-nav-menu {
-    display: none
+    /* display: none */
 }
 
 @media (min-width: 768px) {
@@ -8818,23 +8818,40 @@ a.icon.ae-ico-note:before {
     color: #fff;
     text-shadow: 0 2px 0 rgba(0,0,0,.1)
 } */
-.fa-social{
+.fa-social-div{
     position: relative;
     overflow: hidden;
-    text-indent: -90000px;
-    display: inline-block;
+    /* text-indent: -90000px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 100%;
     width: 50px;
     height: 50px;
+    line-height: 50px;
     padding: 0;
     border: 3px solid #3b5998;
     background-color: #718dc8;
     transition: all .3s ease-in-out;
     transition: transform .4s ease-out;
     color: #fff;
-    text-shadow: 0 2px 0 rgba(0,0,0,.1)
+    text-shadow: 0 2px 0 rgba(0,0,0,.1);
+    cursor: pointer;
+    margin-right: 1px;
+    margin-left: 1px;
 }
-
+.fa-social{
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    /* z-index: 100; */
+}
+.fa-social-div:hover{
+    border-color: #3b5998;
+    transform: rotate(1turn);
+    color: #fff;
+    background-color: #96abd6!important
+}
 [class*=" social-icon"] a:before,[class^=social-icon] a:before {
     font-size: 25px;
     text-indent: 0
@@ -24583,5 +24600,18 @@ body#tinymce.mceContentBody ol:not(.list-custom) {
 body#tinymce.mceContentBody ol:not(.list-custom) li {
     list-style: decimal
 }
-
+@keyframes appear {
+    0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 0;}
+    99% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  
+.menu-animation {
+    overflow: visible;
+    transition: 0.4s max-height;
+    animation: appear 1s ease;
+}
 /*# sourceMappingURL=site.css.map */

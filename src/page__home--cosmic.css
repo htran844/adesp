@@ -732,6 +732,9 @@
     align-items: center !important;
     justify-content: center !important;
 }
+.react-a-icon:hover{
+    transform: scale(1.1);
+}
 .react-icon-style {
     display: flex;
     border-radius: 100%;

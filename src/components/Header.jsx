@@ -1,32 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height
-    };
-  }
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
 
 function Header() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    const [menuOpen, setMenuOpen] = useState(false)
-    useEffect(() => {
-        function handleResize() {
-          setWindowDimensions(getWindowDimensions());
-        }
-    
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-      }, []);
-      useEffect(()=>{
-        if (windowDimensions.width >= 768 ) {
-            setMenuOpen(true)
-        }
-        if (windowDimensions.width < 768 ) {
-            setMenuOpen(false)
-        }
-      },[windowDimensions])
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [height, setHeight] = useState(0);
+  const [overState, setOverState] = useState("hidden");
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  useEffect(() => {
+    if (windowDimensions.width < 480) {
+      setHeight(360);
+    } else if (windowDimensions.width < 657){
+      setHeight(120);
+    } else{
+      setHeight(60);
+    }
+    if (windowDimensions.width >= 768) {
+      setMenuOpen(true);
+      setOverState("visible")
+    }
+    if (windowDimensions.width < 768) {
+      setMenuOpen(false);
+      if (!menuOpen) {
+        setOverState("hidden")
+      }
+    }
+  }, [windowDimensions]);
+  
   return (
     <div>
       <header
@@ -37,7 +54,7 @@ function Header() {
         <div className="wrap">
           <div className="title-area">
             <p className="site-title" itemProp="headline">
-              <a className="logo" href="https://adespresso.com/">
+              <a className="logo" href="/">
                 AdEspresso
               </a>
             </p>
@@ -56,17 +73,26 @@ function Header() {
                   itemScope=""
                   itemType="http://schema.org/SiteNavigationElement"
                 >
-                  <div id="responsive-menu-icon" onClick={()=>{setMenuOpen(pre=>!pre)}}>
-                  <GiHamburgerMenu
-                    fontSize={24}
-                  />
+                  <div
+                    id="responsive-menu-icon"
+                    onClick={() => {
+                      setMenuOpen((pre) => {
+                        if (!pre && windowDimensions.width < 768) {
+                          setOverState("visible")
+                        } 
+                        if (pre && windowDimensions.width < 768) {
+                          setOverState("hidden")
+                        }
+                        return !pre
+                      });
+                    }}
+                  >
+                    <GiHamburgerMenu fontSize={24} />
                   </div>
                   <ul
                     id="menu-main"
-                    className="menu genesis-nav-menu responsive-menu"
-                    style={{
-                        display: menuOpen ? "block": "none"
-                    }}
+                    className={`menu genesis-nav-menu responsive-menu menu-animation`}
+                    style={{ maxHeight: menuOpen ? height : 0, overflow: overState}}
                   >
                     <li
                       id="menu-item-58290"
@@ -81,7 +107,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58291"
                         >
                           <a
-                            href="https://adespresso.com/agency/"
+                            href="/agency/"
                             itemProp="url"
                           >
                             <span itemProp="name">For Agencies</span>
@@ -92,7 +118,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58293"
                         >
                           <a
-                            href="https://adespresso.com/e-commerce/"
+                            href="/e-commerce/"
                             itemProp="url"
                           >
                             <span itemProp="name">For e-Commerce</span>
@@ -103,7 +129,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58292"
                         >
                           <a
-                            href="https://adespresso.com/small-medium-business/"
+                            href="/small-medium-business/"
                             itemProp="url"
                           >
                             <span itemProp="name">
@@ -115,7 +141,7 @@ function Header() {
                           id="menu-item-19"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"
                         >
-                          <a href="https://adespresso.com/tour/" itemProp="url">
+                          <a href="/tour/" itemProp="url">
                             <span itemProp="name">For Every Advertiser</span>
                           </a>
                         </li>
@@ -134,7 +160,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58298"
                         >
                           <a
-                            href="https://adespresso.com/tour/create/"
+                            href="/tour/create/"
                             itemProp="url"
                           >
                             <span itemProp="name">Create</span>
@@ -145,7 +171,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58295"
                         >
                           <a
-                            href="https://adespresso.com/tour/manage/"
+                            href="/tour/manage/"
                             itemProp="url"
                           >
                             <span itemProp="name">Manage</span>
@@ -156,7 +182,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58299"
                         >
                           <a
-                            href="https://adespresso.com/tour/analyze/"
+                            href="/tour/analyze/"
                             itemProp="url"
                           >
                             <span itemProp="name">Analyze</span>
@@ -167,7 +193,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58297"
                         >
                           <a
-                            href="https://adespresso.com/tour/collaborate/"
+                            href="/tour/collaborate/"
                             itemProp="url"
                           >
                             <span itemProp="name">Collaborate</span>
@@ -178,7 +204,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58296"
                         >
                           <a
-                            href="https://adespresso.com/tour/learn/"
+                            href="/tour/learn/"
                             itemProp="url"
                           >
                             <span itemProp="name">Learn</span>
@@ -188,7 +214,7 @@ function Header() {
                           id="menu-item-58300"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-58300"
                         >
-                          <a href="https://adespresso.com/tour/" itemProp="url">
+                          <a href="/tour/" itemProp="url">
                             <span itemProp="name">All Features</span>
                           </a>
                         </li>
@@ -206,7 +232,7 @@ function Header() {
                           id="menu-item-13"
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-13"
                         >
-                          <a href="https://adespresso.com/blog/" itemProp="url">
+                          <a href="/blog/" itemProp="url">
                             <span itemProp="name">Blog</span>
                           </a>
                         </li>
@@ -215,7 +241,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-154"
                         >
                           <a
-                            href="https://adespresso.com/guides/"
+                            href="/guides/"
                             itemProp="url"
                           >
                             <span itemProp="name">Guides</span>
@@ -226,7 +252,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-155"
                         >
                           <a
-                            href="https://adespresso.com/webinars/"
+                            href="/webinars/"
                             itemProp="url"
                           >
                             <span itemProp="name">Webinars</span>
@@ -237,7 +263,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-153"
                         >
                           <a
-                            href="https://adespresso.com/ebooks/"
+                            href="/ebooks/"
                             itemProp="url"
                           >
                             <span itemProp="name">eBooks</span>
@@ -248,7 +274,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-60924"
                         >
                           <a
-                            href="https://adespresso.com/ads-examples/"
+                            href="/ads-examples/"
                             itemProp="url"
                           >
                             <span itemProp="name">Facebook Ad Examples</span>
@@ -259,7 +285,7 @@ function Header() {
                           className="menu-item menu-item-type-post_type menu-item-object-page menu-item-70107"
                         >
                           <a
-                            href="https://adespresso.com/case-studies/"
+                            href="/case-studies/"
                             itemProp="url"
                           >
                             <span itemProp="name">Case Studies</span>
@@ -272,7 +298,7 @@ function Header() {
                       className="menu-item menu-item-type-post_type menu-item-object-page menu-item-69394"
                     >
                       <a
-                        href="https://adespresso.com/tour/marketing-services/"
+                        href="/tour/marketing-services/"
                         itemProp="url"
                       >
                         <span itemProp="name">Services</span>
@@ -282,7 +308,7 @@ function Header() {
                       id="menu-item-129"
                       className="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"
                     >
-                      <a href="https://adespresso.com/pricing/" itemProp="url">
+                      <a href="/pricing/" itemProp="url">
                         <span itemProp="name">Pricing</span>
                       </a>
                     </li>
@@ -290,7 +316,7 @@ function Header() {
                       id="menu-item-128"
                       className="menu-signup-button menu-item menu-item-type-post_type menu-item-object-page menu-item-128"
                     >
-                      <a href="https://adespresso.com/join/" itemProp="url">
+                      <a href="/join/" itemProp="url">
                         <span itemProp="name">Signup</span>
                       </a>
                     </li>
@@ -298,7 +324,7 @@ function Header() {
                       id="menu-item-291"
                       className="menu-item menu-item-type-custom menu-item-object-custom menu-item-291"
                     >
-                      <a href="https://app.adespresso.com/login" itemProp="url">
+                      <a href="#" itemProp="url">
                         <span itemProp="name">Login</span>
                       </a>
                     </li>
