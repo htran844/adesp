@@ -24,14 +24,14 @@ export default function Quote() {
                 <div className="author">
                   <div className="profile">
                     <img
-                      src="public/quote-sugar-crumbs.jpg"
+                      src="/quote-sugar-crumbs.jpg"
                       alt="John McFarland"
                       className="lazyloaded"
                       data-ll-status="loaded"
                     />
                     <noscript>
                       &lt;img
-                      src="public/quote-sugar-crumbs.jpg"
+                      src="/quote-sugar-crumbs.jpg"
                       alt="John McFarland" /&gt;
                     </noscript>
                   </div>

@@ -8,66 +8,66 @@ export default function BarSection() {
     <ul className="brand">
       <li>
         <img
-          src="public/logo_client14.png"
+          src="/logo_client14.png"
           alt="Hubspot"
           className="lazyloaded"
           data-ll-status="loaded"
         />
         <noscript>
           &lt;img
-          src="public/logo_client14.png"
+          src="/logo_client14.png"
           alt="Hubspot"&gt;
         </noscript>
       </li>
       <li>
         <img
-          src="public/logo_client15.png"
+          src="/logo_client15.png"
           alt="Client logo"
           className="lazyloaded"
           data-ll-status="loaded"
         />
         <noscript>
           &lt;img
-          src="public/logo_client15.png"
+          src="/logo_client15.png"
           alt="Client logo"&gt;
         </noscript>
       </li>
       <li>
         <img
-          src="public/logo_client11.png"
+          src="/logo_client11.png"
           alt="Kabbage"
           className="lazyloaded"
           data-ll-status="loaded"
         />
         <noscript>
           &lt;img
-          src="public/logo_client11.png"
+          src="/logo_client11.png"
           alt="Kabbage"&gt;
         </noscript>
       </li>
       <li>
         <img
-          src="public/logo_client12.png"
+          src="/logo_client12.png"
           alt="TeeSpring"
           className="lazyloaded"
           data-ll-status="loaded"
         />
         <noscript>
           &lt;img
-          src="public/logo_client12.png"
+          src="/logo_client12.png"
           alt="TeeSpring"&gt;
         </noscript>
       </li>
       <li>
         <img
-          src="public/logo_client13.png"
+          src="/logo_client13.png"
           alt="DQNA Media Group"
           className="lazyloaded"
           data-ll-status="loaded"
         />
         <noscript>
           &lt;img
-          src="public/logo_client13.png"
+          src="/logo_client13.png"
           alt="DQNA Media Group"&gt;
         </noscript>
       </li>

@@ -12,21 +12,21 @@ export default function Collaborate() {
               <div className="img-wrap ">
                 <img
                   className="alignnone size-full wp-image-58072 lazyloaded"
-                  src="public/feat_collaboration_03f.png"
+                  src="/feat_collaboration_03f.png"
                   alt="Screenshot"
                   width={800}
                   height={500}
                   sizes="(max-width: 800px) 100vw, 800px"
-                  srcSet="public/feat_collaboration_03f.png 800w, public/feat_collaboration_03f-300x188.png 300w"
+                  srcSet="/feat_collaboration_03f.png 800w, /feat_collaboration_03f-300x188.png 300w"
                   data-ll-status="loaded"
                 />
                 <noscript>
                   &lt;img class="alignnone size-full wp-image-58072"
-                  src="public/feat_collaboration_03f.png"
+                  src="/feat_collaboration_03f.png"
                   alt="Screenshot" width="800" height="500"
-                  srcset="public/feat_collaboration_03f.png
+                  srcset="/feat_collaboration_03f.png
                   800w,
-                  public/feat_collaboration_03f-300x188.png
+                  /feat_collaboration_03f-300x188.png
                   300w" sizes="(max-width: 800px) 100vw, 800px" /&gt;
                 </noscript>
               </div>

@@ -12,21 +12,21 @@ export default function Analyze() {
               <div className="img-wrap ">
                 <img
                   className="aligncenter wp-image-62026 size-full lazyloaded"
-                  src="public/feat_analyze.png"
+                  src="/feat_analyze.png"
                   alt=""
                   width={800}
                   height={502}
                   sizes="(max-width: 800px) 100vw, 800px"
-                  srcSet="public/feat_analyze.png 800w, public/feat_analyze-300x188.png 300w"
+                  srcSet="/feat_analyze.png 800w, /feat_analyze-300x188.png 300w"
                   data-ll-status="loaded"
                 />
                 <noscript>
                   &lt;img class="aligncenter wp-image-62026 size-full"
-                  src="public/feat_analyze.png"
+                  src="/feat_analyze.png"
                   alt="" width="800" height="502"
-                  srcset="public/feat_analyze.png
+                  srcset="/feat_analyze.png
                   800w,
-                  public/feat_analyze-300x188.png
+                  /feat_analyze-300x188.png
                   300w" sizes="(max-width: 800px) 100vw, 800px" /&gt;
                 </noscript>
               </div>

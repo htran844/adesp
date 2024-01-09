@@ -12,22 +12,22 @@ export default function Create() {
               <div className="img-wrap ">
                 <img
                   className="aligncenter wp-image-62012 size-full lazyloaded"
-                  src="public/feat_create_01b-2k19.png"
+                  src="/feat_create_01b-2k19.png"
                   alt="Create Campaign Facebook Adwords"
                   width={800}
                   height={500}
                   sizes="(max-width: 800px) 100vw, 800px"
-                  srcSet="public/feat_create_01b-2k19.png 800w, public/feat_create_01b-2k19-300x188.png 300w"
+                  srcSet="/feat_create_01b-2k19.png 800w, /feat_create_01b-2k19-300x188.png 300w"
                   data-ll-status="loaded"
                 />
                 <noscript>
                   &lt;img class="aligncenter wp-image-62012 size-full"
-                  src="public/feat_create_01b-2k19.png"
+                  src="/feat_create_01b-2k19.png"
                   alt="Create Campaign Facebook Adwords" width="800"
                   height="500"
-                  srcset="public/feat_create_01b-2k19.png
+                  srcset="/feat_create_01b-2k19.png
                   800w,
-                  public/feat_create_01b-2k19-300x188.png
+                  /feat_create_01b-2k19-300x188.png
                   300w" sizes="(max-width: 800px) 100vw, 800px" /&gt;
                 </noscript>
               </div>

@@ -12,21 +12,21 @@ export default function Manager() {
               <div className="img-wrap ">
                 <img
                   className="alignnone size-full wp-image-58070 lazyloaded"
-                  src="public/feat_manage_03c.png"
+                  src="/feat_manage_03c.png"
                   alt="Screenshot"
                   width={800}
                   height={500}
                   sizes="(max-width: 800px) 100vw, 800px"
-                  srcSet="public/feat_manage_03c.png 800w, public/feat_manage_03c-300x188.png 300w"
+                  srcSet="/feat_manage_03c.png 800w, /feat_manage_03c-300x188.png 300w"
                   data-ll-status="loaded"
                 />
                 <noscript>
                   &lt;img class="alignnone size-full wp-image-58070"
-                  src="public/feat_manage_03c.png"
+                  src="/feat_manage_03c.png"
                   alt="Screenshot" width="800" height="500"
-                  srcset="public/feat_manage_03c.png
+                  srcset="/feat_manage_03c.png
                   800w,
-                  public/feat_manage_03c-300x188.png
+                  /feat_manage_03c-300x188.png
                   300w" sizes="(max-width: 800px) 100vw, 800px" /&gt;
                 </noscript>
               </div>

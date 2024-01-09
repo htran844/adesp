@@ -169,7 +169,7 @@
     .home-cosmic .home-header {
         padding-top:80px;
         padding-bottom: 80px;
-        background-image: url("/public/1b9ec355a9033a0236cf60df033555d6.svg")
+        background-image: url("/1b9ec355a9033a0236cf60df033555d6.svg")
     }
 }
 
@@ -224,7 +224,7 @@
 .home-cosmic .home-header:after {
     pointer-events: none;
     display: none;
-    background-image: url("/public/3935efd68f31588d57733acea106c10f.svg")
+    background-image: url("/3935efd68f31588d57733acea106c10f.svg")
 }
 
 @media (min-width: 480px) {

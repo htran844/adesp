@@ -15,21 +15,21 @@ export default function Learn() {
                 <div className="img-wrap ">
                   <img
                     className="alignnone size-full wp-image-58075 lazyloaded"
-                    src="public/feat_learn-education_02.png"
+                    src="/feat_learn-education_02.png"
                     alt="Screenshot"
                     width={800}
                     height={500}
                     sizes="(max-width: 800px) 100vw, 800px"
-                    srcSet="public/feat_learn-education_02.png 800w, public/feat_learn-education_02-300x188.png 300w"
+                    srcSet="/feat_learn-education_02.png 800w, /feat_learn-education_02-300x188.png 300w"
                     data-ll-status="loaded"
                   />
                   <noscript>
                     &lt;img class="alignnone size-full wp-image-58075"
-                    src="public/feat_learn-education_02.png"
+                    src="/feat_learn-education_02.png"
                     alt="Screenshot" width="800" height="500"
-                    srcset="public/feat_learn-education_02.png
+                    srcset="/feat_learn-education_02.png
                     800w,
-                    public/feat_learn-education_02-300x188.png
+                    /feat_learn-education_02-300x188.png
                     300w" sizes="(max-width: 800px) 100vw, 800px" /&gt;
                   </noscript>
                 </div>
