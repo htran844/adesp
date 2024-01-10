@@ -60,7 +60,7 @@ export default function ListAction() {
                         </span>
                       </a>
                     </li>
-                    <li className="item learn-item">
+                    {/* <li className="item learn-item">
                       <a className="goto react-a-icon" href="#LearnFeature">
                         <div className="react-icon-style">
                           <FaBook />
@@ -70,7 +70,7 @@ export default function ListAction() {
                           Grow your ads skills with the AdEspresso University
                         </span>
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </section>
               </div>{" "}
